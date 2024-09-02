@@ -1,0 +1,69 @@
+{
+  "name": "moneta",
+  "description": "Blank project with routing included",
+  "engines": {
+    "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
+  },
+  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
+  "packageManager": "pnpm@9.8.0+sha512.8e4c3550fb500e808dbc30bb0ce4dd1eb614e30b1c55245f211591ec2cdf9c611cabd34e1364b42f564bd54b3945ed0f49d61d1bbf2ec9bd74b866fcdc723276",
+  "private": true,
+  "trustedDependencies": [
+    "sharp"
+  ],
+  "trustedDependencies-annotation": "Needed for bun to allow running install scripts",
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/static/vite.config.ts",
+    "build.types": "tsc --incremental --noEmit",
+    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint -c eslint.config.mjs",
+    "preview": "qwik build preview && vite preview --open",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@tauri-apps/plugin-fs": "^2.0.0-rc.2",
+    "@tauri-apps/plugin-log": "^2.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "^1.8.0",
+    "@builder.io/qwik-city": "^1.8.0",
+    "@eslint/js": "^9.9.1",
+    "@tauri-apps/cli": "^2.0.0-rc.8",
+    "@types/eslint": "^8.56.10",
+    "@types/node": "^20.16.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-perfectionist": "^3.3.0",
+    "eslint-plugin-qwik": "^1.8.0",
+    "eslint-plugin-unicorn": "^55.0.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "stylelint": "^16.9.0",
+    "stylelint-config-recess-order": "^5.1.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
+    "stylelint-declaration-use-variable": "^1.7.3",
+    "stylelint-prettier": "^5.0.2",
+    "tailwindcss": "^3.4.10",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "5.4.5",
+    "typescript-eslint": "^8.3.0",
+    "undici": "*",
+    "unplugin-turbo-console": "^1.10.1",
+    "vite": "^5.4.2",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}
